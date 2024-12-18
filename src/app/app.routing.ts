@@ -9,8 +9,8 @@ import { InitialDataResolver } from 'app/app.resolvers';
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 export const appRoutes: Route[] = [
 
-    {path: '', pathMatch : 'full', redirectTo: 'dashboards/project'},
-    {path: 'signed-in-redirect', pathMatch : 'full', redirectTo: 'dashboards/project'},
+    {path: '', pathMatch : 'full', redirectTo: 'main'},
+    {path: 'signed-in-redirect', pathMatch : 'full', redirectTo: 'main'},
 
     // Auth routes for guests
     {
@@ -50,6 +50,9 @@ export const appRoutes: Route[] = [
             initialData: InitialDataResolver,
         },
         children   : [
+
+            {path: 'main', loadChildren: () => import('app/modules/main/main.module').then(m => m.MainModule)},
+            {path: 'tests', loadChildren: () => import('app/modules/tests/tests.module').then(m => m.TestsModule)},
 
             // Dashboards
             {path: 'dashboards', children: [

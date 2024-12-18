@@ -952,31 +952,38 @@ export const defaultNavigation: FuseNavigationItem[] = [
 ];
 export const horizontalNavigation: FuseNavigationItem[] = [
     {
-        id      : 'dashboards',
-        title   : 'Dashboards',
+        id      : 'main',
+        title   : 'Главная',
         type    : 'basic',
         icon    : 'heroicons_outline:home',
-        link    : '/dashboards/project'
+        link    : '/main'
     },
     {
-        id      : 'apps',
-        title   : 'Apps',
+        id      : 'tests',
+        title   : 'Методики',
         type    : 'basic',
         icon    : 'heroicons_outline:qrcode',
-        link    : '/apps/academy'
+        link    : '/tests'
     },
     {
-        id      : 'pages',
-        title   : 'Pages',
+        id      : 'profession',
+        title   : 'Профессии',
         type    : 'basic',
         icon    : 'heroicons_outline:document-duplicate',
-        link    : '/pages/activities'
+        link    : '/profession'
     },
     {
-        id      : 'user-interface',
-        title   : 'UI',
+        id      : 'psychologists',
+        title   : 'Психологи',
         type    : 'basic',
-        icon    : 'heroicons_outline:collection',
-        link    : '/ui/material-components'
+        icon    : 'heroicons_outline:users',
+        link    : '/psychologists'
+    },
+    {
+        id      : 'analysis',
+        title   : 'Анализ',
+        type    : 'basic',
+        icon    : 'heroicons_outline:chart-bar',
+        link    : '/Analysis'
     }
 ];

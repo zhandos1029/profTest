@@ -1,0 +1,67 @@
+<!-- tests.component.html -->
+<div class="flex flex-col flex-auto min-w-0">
+
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
+        <div class="flex-1 min-w-0">
+            <!-- Breadcrumbs -->
+            <div class="flex flex-wrap items-center font-medium">
+                <div>
+                    <a class="whitespace-nowrap text-primary-500">Методики</a>
+                </div>
+            </div>
+            <!-- Title -->
+            <div class="mt-2">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
+                    Тесты для школьников
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div class="flex-auto p-6 sm:p-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+            <!-- Test 1 -->
+            <div class="flex flex-col p-6 bg-white shadow hover:shadow-lg rounded-lg">
+                <div class="text-2xl font-semibold mb-2">Тест на профессиональную ориентацию</div>
+                <div class="text-gray-600 mb-4">Узнайте, какая профессия вам подходит. Подробное исследование ваших интересов и предпочтений.</div>
+                <button
+                        mat-button
+                        color="primary"
+                        (click)="openModal('Тест на профессиональную ориентацию', 'Этот тест поможет определить ваши сильные стороны и предпочтения для выбора подходящей профессии. Здесь вы узнаете о профессиях, которые подходят именно вам, на основе тестовых результатов.', '/test/profession')">
+                    Подробнее
+                </button>
+            </div>
+
+            <!-- Test 2 -->
+            <div class="flex flex-col p-6 bg-white shadow hover:shadow-lg rounded-lg">
+                <div class="text-2xl font-semibold mb-2">Тест на психологический тип</div>
+                <div class="text-gray-600 mb-4">Понимание ваших личных качеств и особенностей для лучшего саморазвития.</div>
+                <button
+                        mat-button
+                        color="primary"
+                        (click)="openModal('Тест на психологический тип', 'Этот тест поможет вам понять ваши личные качества и особенности вашего характера. Он включает в себя анализ поведения и предпочтений для лучшего понимания себя.', '/test/psychology')">
+                    Подробнее
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Template -->
+<ng-template #modalTemplate>
+    <div class="modal-header flex justify-between items-center p-6 border-b">
+        <h2 class="text-2xl font-bold">{{modalTitle}}</h2>
+        <button mat-icon-button (click)="closeModal()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div class="modal-body p-6">
+        <p class="text-gray-700 leading-relaxed">{{modalDescription}}</p>
+    </div>
+    <div class="modal-footer p-6 bg-gray-50 flex justify-end">
+        <a mat-button [href]="modalLink" target="_blank" class="text-primary-500">Пройти тест</a>
+    </div>
+</ng-template>
