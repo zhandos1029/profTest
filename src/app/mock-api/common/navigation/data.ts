@@ -966,11 +966,11 @@ export const horizontalNavigation: FuseNavigationItem[] = [
         link    : '/tests'
     },
     {
-        id      : 'profession',
+        id      : 'professions',
         title   : 'Профессии',
         type    : 'basic',
         icon    : 'heroicons_outline:document-duplicate',
-        link    : '/profession'
+        link    : '/professions'
     },
     {
         id      : 'psychologists',
@@ -984,6 +984,6 @@ export const horizontalNavigation: FuseNavigationItem[] = [
         title   : 'Анализ',
         type    : 'basic',
         icon    : 'heroicons_outline:chart-bar',
-        link    : '/Analysis'
+        link    : '/analysis'
     }
 ];

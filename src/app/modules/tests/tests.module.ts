@@ -6,18 +6,26 @@ import {RouterModule} from "@angular/router";
 import {FuseCardModule} from "../../../@fuse/components/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import {SharedModule} from "../../shared/shared.module";
+import { DetailComponent } from './detail/detail.component';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {MatRadioModule} from "@angular/material/radio";
 
 
 @NgModule({
   declarations: [
-      TestsComponent
+      TestsComponent,
+      DetailComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(testsRoutes),
-    FuseCardModule,
-    MatButtonModule,
-    MatIconModule,
-  ]
+    imports: [
+        CommonModule,
+        SharedModule,
+        RouterModule.forChild(testsRoutes),
+        FuseCardModule,
+        MatButtonModule,
+        MatIconModule,
+        MatProgressBarModule,
+        MatRadioModule,
+    ]
 })
 export class TestsModule { }

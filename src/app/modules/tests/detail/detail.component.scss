@@ -1,0 +1,37 @@
+.question-section {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  mat-radio-button {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+
+  button {
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+  }
+}
+
+.result-section {
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .emoji-result {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  button {
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+  }
+}

@@ -1,0 +1,10 @@
+<fuse-alert
+        [appearance]="'fill'"
+        [dismissible]="true"
+        [dismissed]="false"
+        [name]="'alertBox1'"
+        [type]="data.type"
+        (onDismiss)="snackBarRef.dismiss()">
+    <span fuseAlertTitle>{{data.message}}</span>
+    {{data.error}}
+</fuse-alert>

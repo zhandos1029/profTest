@@ -5,6 +5,7 @@ import {RouterModule} from "@angular/router";
 import {mainRoutes} from "./main-routing.module";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {SharedModule} from "../../shared/shared.module";
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import {MatButtonModule} from "@angular/material/button";
   ],
   imports: [
     CommonModule,
+    SharedModule,
     RouterModule.forChild(mainRoutes),
     MatIconModule,
     MatButtonModule

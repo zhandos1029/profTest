@@ -1,0 +1,75 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
+        <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center font-medium">
+                <div>
+                    <a class="whitespace-nowrap text-primary-500">Профессии</a>
+                </div>
+            </div>
+            <div class="mt-2">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
+                    Выберите свою будущую профессию
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="mb-6 sm:mb-12 p-6">
+        <mat-button-toggle-group
+                class="flex flex-wrap -m-3"
+                [(ngModel)]="selectedFilter"
+                (change)="onFilterChange($event)">
+            <ng-container *ngFor="let category of categories">
+                <mat-button-toggle
+                        class="m-3"
+                        [value]="category.key">
+                    <span class="text-secondary">{{ category.name }}</span>
+                    <span class="ml-2 font-medium text-secondary">({{ numberOfProfessions[category.key] }})</span>
+                </mat-button-toggle>
+            </ng-container>
+        </mat-button-toggle-group>
+    </div>
+
+    <!-- Profession Cards -->
+    <div class="flex flex-wrap justify-center w-full -m-6">
+        <fuse-card
+                *ngFor="let profession of professions"
+                class="flex flex-col w-full sm:w-96 max-w-96 m-5 filter-{{profession.category}}"
+                [flippable]="true"
+                [face]="'front'"
+                #flippableCard="fuseCard">
+            <ng-container fuseCardFront>
+                <div class="flex flex-col items-center p-8">
+                    <div class="text-6xl">{{ profession.emoji }}</div>
+                    <div class="text-2xl font-semibold mt-4">{{ profession.name }}</div>
+                    <div class="mt-2 text-center text-gray-600">{{ profession.description }}</div>
+                    <button
+                            class="mt-6 px-6"
+                            mat-button
+                            color="primary"
+                            (click)="flippableCard.face = flippableCard.face === 'front' ? 'back' : 'front'">
+                        Подробнее
+                    </button>
+                </div>
+            </ng-container>
+            <ng-container fuseCardBack>
+                <div class="p-8">
+                    <button
+                            mat-icon-button
+                            (click)="flippableCard.face = flippableCard.face === 'front' ? 'back' : 'front'">
+                        <mat-icon>arrow_back</mat-icon>
+                    </button>
+                    <div class="mt-4">
+                        <div class="text-xl font-bold">{{ profession.name }}</div>
+                        <div class="mt-2">{{ profession.details }}</div>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <strong>Школьные предметы для ЕНТ:</strong> {{ profession.subjects }}
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </fuse-card>
+    </div>
+</div>

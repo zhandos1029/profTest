@@ -1,0 +1,61 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
+        <div class="flex-1 min-w-0">
+            <!-- Breadcrumbs -->
+            <div class="flex flex-wrap items-center font-medium">
+                <div>
+                    <a class="whitespace-nowrap text-primary-500" routerLink="/tests">{{ 'tests.breadcrumb' | transloco }}</a>
+                </div>
+            </div>
+            <!-- Title -->
+            <div class="mt-2">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
+                    {{ testTitle }}
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div class="flex-auto p-6 sm:p-10">
+        <!-- Timer and Question Progress -->
+        <div *ngIf="!isFinished" class="mb-6">
+            <div class="flex justify-between items-center mb-2">
+                <span class="text-lg font-semibold">{{ 'Вопрос' }} {{ currentQuestionIndex + 1 }} {{ 'из' }} {{ questions.length }}</span>
+                <span class="text-lg font-semibold">⏳ {{ 'Оставшееся время:' }} {{ remainingTime }} сек</span>
+            </div>
+            <mat-progress-bar [value]="(currentQuestionIndex + 1) / questions.length * 100"></mat-progress-bar>
+        </div>
+
+        <!-- Question Section -->
+        <div *ngIf="!isFinished" class="question-section mb-6">
+            <h2 class="text-xl font-semibold mb-4">{{ currentQuestion.question }}</h2>
+            <div class="flex flex-col space-y-4">
+                <mat-radio-group [(ngModel)]="selectedOption">
+                    <mat-radio-button *ngFor="let option of currentQuestion.options; index as i" [value]="i">
+                        <span class="text-lg">{{ option }}</span>
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <button mat-raised-button color="primary" class="mt-6" [disabled]="selectedOption === null" (click)="nextQuestion()">
+                {{ 'Далее' }}
+            </button>
+        </div>
+
+        <!-- Result Section -->
+        <div *ngIf="isFinished" class="result-section text-center">
+            <h2 class="text-2xl font-semibold">{{ 'Результат:' }} {{ score }}/{{ questions.length }}</h2>
+            <mat-progress-bar mode="determinate" class="my-4" [value]="score / questions.length * 100"></mat-progress-bar>
+            <div class="emoji-result text-3xl mb-4">
+                <span>{{ getAdvice(score).emoji }}</span>
+            </div>
+            <h3 class="text-xl font-bold">{{ getAdvice(score).title }}</h3>
+            <p class="text-lg font-light mb-6">{{ getAdvice(score).advice }}</p>
+            <p class="text-lg font-semibold">
+                🕒 {{ 'Вы прошли тест за' }} {{ spentTime }} {{ 'секунд.' }}
+            </p>
+            <button mat-raised-button color="primary" routerLink="/tests">{{ 'Вернуться к тестам' }}</button>
+        </div>
+    </div>
+</div>
