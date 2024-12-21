@@ -1,0 +1,79 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
+        <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center font-medium">
+                <div>
+                    <a class="whitespace-nowrap text-primary-500">{{ 'analysis.headerTitle' | transloco }}</a>
+                </div>
+            </div>
+            <div class="mt-2">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
+                    {{ 'analysis.subHeader' | transloco }}
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-auto p-6 sm:p-10 space-y-8">
+        <!-- Test Results -->
+        <section class="p-6 rounded-lg bg-indigo-50 text-indigo-800 shadow">
+            <h3 class="text-2xl font-semibold mb-4">
+                {{ 'analysis.testResults' | transloco }} 🌟
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div
+                        *ngFor="let result of testResults"
+                        class="p-4 bg-white rounded-lg shadow hover:shadow-lg transition relative">
+                    <!-- Emoji based on score -->
+                    <span
+                            class="absolute top-2 right-2 text-3xl"
+                            [ngClass]="{'text-blue-500': result.score >= 4, 'text-yellow-500': result.score === 3, 'text-red-500': result.score < 3}">
+                        {{ result.score >= 4 ? '🎉' : result.score === 3 ? '💪' : '🛠️' }}
+                    </span>
+                    <h4 class="text-lg font-semibold">{{ result.testName }}</h4>
+                    <p class="text-sm text-gray-500">{{ 'analysis.date' | transloco }}: {{ result.date }}</p>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-4xl font-extrabold text-indigo-600">{{ result.score }}</span>
+                        <span class="text-lg ml-2 text-gray-500">/ {{ result.maxScore }}</span>
+                    </div>
+                    <div class="mt-4">
+                        <div class="text-sm text-gray-700">
+                            {{ result.score >= 4 ? 'Отлично! Ты молодец!' : result.score === 3 ? 'Хороший результат, но можно лучше!' : 'Не переживай, это только начало!' }}
+                        </div>
+                        <div class="mt-2">
+                            <mat-progress-bar
+                                    [value]="(result.score / result.maxScore) * 100"
+                                    [color]="result.score >= 4 ? 'accent' : 'primary'">
+                            </mat-progress-bar>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations -->
+        <section class="p-6 rounded-lg bg-blue-50 text-blue-800 shadow">
+            <h3 class="text-2xl font-semibold mb-4">
+                {{ 'analysis.recommendations' | transloco }} 🌟
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div
+                        *ngFor="let recommendation of recommendations"
+                        class="p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+                    <h4 class="text-lg font-semibold">{{ recommendation.profession }}</h4>
+                    <p class="text-sm text-gray-500">
+                        {{ 'analysis.compatibility' | transloco }}: {{ recommendation.compatibility }}%
+                    </p>
+                    <h5 class="font-medium text-blue-700 mt-2">
+                        {{ 'analysis.universities' | transloco }}
+                    </h5>
+                    <ul class="list-disc pl-4 text-sm text-gray-700">
+                        <li *ngFor="let university of recommendation.universities">{{ university }}</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

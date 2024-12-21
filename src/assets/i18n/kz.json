@@ -1,4 +1,32 @@
 {
+    "navigation": {
+        "main": "Басты бет",
+        "tests": "Әдістер",
+        "professions": "Мамандықтар",
+        "psychologists": "Психологтар",
+        "analysis": "Талдау"
+    },
+    "login": {
+        "title": "Кіру",
+        "email": {
+            "label": "Электрондық пошта мекенжайы",
+            "requiredError": "Электрондық пошта мекенжайы қажет",
+            "invalidError": "Дұрыс электрондық пошта мекенжайын енгізіңіз"
+        },
+        "password": {
+            "label": "Құпия сөз",
+            "requiredError": "Құпия сөз қажет",
+            "show": "Құпия сөзді көрсету",
+            "hide": "Құпия сөзді жасыру"
+        },
+        "button": {
+            "login": "Кіру",
+            "loading": "Жүктелуде..."
+        },
+        "alert": {
+            "error": "Қате! Қайтадан әрекет етіңіз."
+        }
+    },
     "welcome": {
         "title1": "Қош келдіңіз",
         "signedInAs": "Кіру:",
@@ -52,5 +80,29 @@
         "title": "Мектеп оқушыларына арналған тесттер"
     },
     "moreButton": "Толығырақ",
-    "takeTestButton": "Тестілеуден өту"
+    "takeTestButton": "Тестілеуден өту",
+    "psychologists": {
+        "headerTitle": "Психологтар",
+        "specialization": "Көмек салалары",
+        "findYourPsychologist": "Өзіңізге сәйкес психолог табыңыз",
+        "experience": "Тәжірибе",
+        "schedule": "Жұмыс кестесі",
+        "email": "Электрондық пошта",
+        "phone": "Телефон"
+    },
+    "analysis": {
+        "headerTitle": "Талдау",
+        "subHeader": "Тест нәтижелеріңізді талдап, ұсыныстар алыңыз",
+        "testResults": "Тест нәтижелері",
+        "date": "Күні",
+        "compatibility": "Сәйкестік",
+        "recommendations": "Ұсыныстар",
+        "universities": "Ұсынылған университеттер"
+    },
+    "professions": {
+        "header": "Мамандықтар",
+        "title": "Болашақ мамандығыңызды таңдаңыз",
+        "detailsButton": "Толығырақ",
+        "subjects": "ҰБТ пәндері"
+    }
 }

@@ -1,0 +1,126 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <div class="flex flex-col items-center min-h-screen bg-gradient-to-b from-gray-100 to-gray-200">
+
+        <!-- Header -->
+        <div class="w-full bg-cover bg-center text-white py-8 shadow-lg" style="background-image: url('assets/images/pages/help-center/image-1.jpg');">
+            <div class="max-w-6xl mx-auto flex flex-col items-center">
+                <div class="rounded-full overflow-hidden border-4 border-white">
+                    <img
+                            class="w-32 h-32"
+                            src="assets/images/pages/profile/img_5.png"
+                            alt="User avatar">
+                </div>
+                <h1 class="mt-6 text-3xl font-bold">Жанаев Арсен</h1>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="w-full max-w-6xl mx-auto p-6 lg:p-12 flex flex-col lg:flex-row gap-8">
+
+            <!-- Left Column -->
+            <div class="w-full lg:w-1/3 space-y-6">
+                <!-- Personal Info -->
+                <div class="p-8 bg-white rounded-xl shadow-xl">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Персональная информация</h2>
+                    <div class="space-y-4 text-lg">
+                        <div class="flex items-center">
+                            <mat-icon class="mr-4 text-indigo-600" [svgIcon]="'heroicons_solid:user'"></mat-icon>
+                            <span>ФИО: <strong>Жанаев Арсен</strong></span>
+                        </div>
+                        <div class="flex items-center">
+                            <mat-icon class="mr-4 text-green-600" [svgIcon]="'heroicons_solid:cake'"></mat-icon>
+                            <span>Дата рождения: <strong>12.05.2005</strong></span>
+                        </div>
+                        <div class="flex items-center">
+                            <mat-icon class="mr-4 text-yellow-600" [svgIcon]="'heroicons_solid:academic-cap'"></mat-icon>
+                            <span>Школа: <strong>№15, Астана</strong></span>
+                        </div>
+                        <div class="flex items-center">
+                            <mat-icon class="mr-4 text-pink-600" [svgIcon]="'heroicons_solid:library'"></mat-icon>
+                            <span>Класс: <strong>11Б</strong></span>
+                        </div>
+                        <div class="flex items-center">
+                            <mat-icon class="mr-4 text-purple-600" [svgIcon]="'heroicons_solid:location-marker'"></mat-icon>
+                            <span>Город: <strong>Астана</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="p-8 bg-white rounded-xl shadow-xl">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Быстрые действия</h2>
+                    <div class="space-y-4">
+                        <button
+                                class="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg text-lg hover:bg-indigo-700"
+                                routerLink="/tests">
+                            Пройти тест
+                        </button>
+                        <button
+                                class="w-full px-6 py-3 bg-green-600 text-white rounded-lg text-lg hover:bg-green-700"
+                                routerLink="/analysis">
+                            Посмотреть результаты
+                        </button>
+                        <button
+                                class="w-full px-6 py-3 bg-gray-200 text-gray-800 rounded-lg text-lg hover:bg-gray-300">
+                            Настройки профиля
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="w-full lg:w-2/3 space-y-6">
+                <!-- Tests Overview -->
+                <div class="p-8 bg-white rounded-xl shadow-xl">
+                    <h2 class="text-2xl font-semibold text-gray-800">Мои тесты</h2>
+                    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="p-6 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg shadow hover:shadow-lg">
+                            <h3 class="text-lg font-medium text-indigo-700">Профориентация</h3>
+                            <p class="text-sm text-gray-600 mt-2">Тест для определения подходящих профессий</p>
+                            <button
+                                    class="mt-4 px-4 py-2 bg-indigo-600 text-white text-sm rounded hover:bg-indigo-700"
+                                    routerLink="/tests">
+                                Пройти тест
+                            </button>
+                        </div>
+                        <div class="p-6 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg shadow hover:shadow-lg">
+                            <h3 class="text-lg font-medium text-indigo-700">Психологический тест</h3>
+                            <p class="text-sm text-gray-600 mt-2">Понять свои сильные стороны</p>
+                            <button
+                                    class="mt-4 px-4 py-2 bg-indigo-600 text-white text-sm rounded hover:bg-indigo-700"
+                                    routerLink="/tests">
+                                Пройти тест
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress -->
+                <div class="p-8 bg-white rounded-xl shadow-xl">
+                    <h2 class="text-2xl font-semibold text-gray-800">Прогресс</h2>
+                    <div class="mt-6 space-y-6">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg text-gray-600">Профориентация</span>
+                                <span class="text-lg text-gray-600">80%</span>
+                            </div>
+                            <div class="w-full h-3 bg-gray-200 rounded-full mt-2">
+                                <div class="h-full bg-indigo-600 rounded-full" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg text-gray-600">Психологический тест</span>
+                                <span class="text-lg text-gray-600">50%</span>
+                            </div>
+                            <div class="w-full h-3 bg-gray-200 rounded-full mt-2">
+                                <div class="h-full bg-indigo-600 rounded-full" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

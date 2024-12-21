@@ -1,0 +1,31 @@
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.bg-card {
+  background-color: #ffffff;
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-2xl {
+  border-radius: 16px;
+}
+
+.hover\:bg-hover:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.text-hint {
+  color: #9ca3af;
+}
+
+.icon-size-5 {
+  font-size: 20px;
+}

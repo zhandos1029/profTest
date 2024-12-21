@@ -1,4 +1,32 @@
 {
+    "navigation": {
+        "main": "Главная",
+        "tests": "Методики",
+        "professions": "Профессии",
+        "psychologists": "Психологи",
+        "analysis": "Анализ"
+    },
+    "login": {
+        "title": "Войти",
+        "email": {
+            "label": "Адрес электронной почты",
+            "requiredError": "Адрес электронной почты обязателен",
+            "invalidError": "Пожалуйста, введите корректный адрес электронной почты"
+        },
+        "password": {
+            "label": "Пароль",
+            "requiredError": "Пароль обязателен",
+            "show": "Показать пароль",
+            "hide": "Скрыть пароль"
+        },
+        "button": {
+            "login": "Войти",
+            "loading": "Загрузка..."
+        },
+        "alert": {
+            "error": "Ошибка! Попробуйте снова."
+        }
+    },
     "welcome": {
         "title1": "Добро пожаловать",
         "signedInAs": "Вошли как",
@@ -52,5 +80,29 @@
         "title": "Тесты для школьников"
     },
     "moreButton": "Подробнее",
-    "takeTestButton": "Пройти тест"
+    "takeTestButton": "Пройти тест",
+    "psychologists": {
+        "headerTitle": "Психологи",
+        "specialization": "Сферы помощи",
+        "findYourPsychologist": "Найдите своего психолога",
+        "experience": "Опыт",
+        "schedule": "График работы",
+        "email": "Электронная почта",
+        "phone": "Телефон"
+    },
+    "analysis": {
+        "headerTitle": "Анализ",
+        "subHeader": "Анализируйте свои тестовые результаты и получите рекомендации",
+        "testResults": "Результаты тестов",
+        "date": "Дата",
+        "compatibility": "Совместимость",
+        "recommendations": "Рекомендации",
+        "universities": "Рекомендуемые университеты"
+    },
+    "professions": {
+        "header": "Профессии",
+        "title": "Выберите свою будущую профессию",
+        "detailsButton": "Подробнее",
+        "subjects": "Школьные предметы для ЕНТ"
+    }
 }

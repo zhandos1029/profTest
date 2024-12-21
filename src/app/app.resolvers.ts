@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { forkJoin, Observable } from 'rxjs';
 import { NavigationService } from 'app/core/navigation/navigation.service';
-import { QuickChatService } from 'app/layout/common/quick-chat/quick-chat.service';
 import { UserService } from 'app/core/user/user.service';
 
 @Injectable({
@@ -15,7 +14,6 @@ export class InitialDataResolver implements Resolve<any>
      */
     constructor(
         private _navigationService: NavigationService,
-        private _quickChatService: QuickChatService,
         private _userService: UserService
     )
     {
@@ -35,7 +33,6 @@ export class InitialDataResolver implements Resolve<any>
     {
         return forkJoin([
             this._navigationService.get(),
-            this._quickChatService.getChats(),
             this._userService.get()
         ]);
     }

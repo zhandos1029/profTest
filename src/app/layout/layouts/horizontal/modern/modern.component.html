@@ -12,10 +12,10 @@
         <!-- Navigation header hook -->
         <ng-container fuseVerticalNavigationContentHeader>
             <!-- Logo -->
-            <div class="flex items-center h-20 pt-6 px-8">
+            <div class="flex items-center h-10 pt-6 px-8">
                 <img
                     class="w-24"
-                    src="assets/images/logo/logo-text-on-dark.svg"
+                    src="assets/images/logo/logo.svg"
                     alt="Logo image">
             </div>
         </ng-container>
@@ -30,25 +30,19 @@
         <ng-container *ngIf="!isScreenSmall">
             <!-- Logo -->
             <div class="flex items-center mx-2 lg:mr-8">
-                <div class="hidden lg:flex">
+                <div class="hidden items-center justify-center lg:flex">
                     <img
-                        class="dark:hidden w-24"
-                        src="assets/images/logo/logo-text.svg">
-                    <img
-                        class="hidden dark:flex w-24"
-                        src="assets/images/logo/logo-text-on-dark.svg">
+                            class="dark:hidden w-10 mr-3"
+                            src="assets/images/logo/logo.svg"
+                            alt="Testify logo">
+                    <span class="text-2xl font-bold tracking-wide">Testify</span>
                 </div>
-                <img
-                    class="flex lg:hidden w-8"
-                    src="assets/images/logo/logo.svg">
             </div>
-            <!-- Horizontal navigation -->
             <fuse-horizontal-navigation
                 class="mr-2"
                 [name]="'mainNavigation'"
                 [navigation]="navigation.horizontal"></fuse-horizontal-navigation>
         </ng-container>
-        <!-- Navigation toggle button -->
         <ng-container *ngIf="isScreenSmall">
             <button
                 mat-icon-button
@@ -61,12 +55,6 @@
             <languages></languages>
             <user></user>
         </div>
-<!--        <button-->
-<!--                class="lg:hidden"-->
-<!--                mat-icon-button-->
-<!--                (click)="quickChat.toggle()">-->
-<!--            <mat-icon [svgIcon]="'heroicons_outline:chat-alt-2'"></mat-icon>-->
-<!--        </button>-->
     </div>
 
     <!-- Content -->
@@ -74,6 +62,3 @@
         <router-outlet *ngIf="true"></router-outlet>
     </div>
 </div>
-
-<!-- Quick chat -->
-<!--<quick-chat #quickChat="quickChat"></quick-chat>-->

@@ -9,7 +9,6 @@ import { FuseFullscreenModule } from '@fuse/components/fullscreen';
 import { FuseLoadingBarModule } from '@fuse/components/loading-bar';
 import { FuseNavigationModule } from '@fuse/components/navigation';
 import { LanguagesModule } from 'app/layout/common/languages/languages.module';
-import { QuickChatModule } from 'app/layout/common/quick-chat/quick-chat.module';
 import { UserModule } from 'app/layout/common/user/user.module';
 import { SharedModule } from 'app/shared/shared.module';
 import { ModernLayoutComponent } from 'app/layout/layouts/horizontal/modern/modern.component';
@@ -29,7 +28,6 @@ import { ModernLayoutComponent } from 'app/layout/layouts/horizontal/modern/mode
         FuseLoadingBarModule,
         FuseNavigationModule,
         LanguagesModule,
-        QuickChatModule,
         UserModule,
         SharedModule
     ],

@@ -1,0 +1,60 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
+        <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center font-medium">
+                <div>
+                    <a class="whitespace-nowrap text-primary-500">{{ 'psychologists.headerTitle' | transloco }}</a>
+                </div>
+            </div>
+            <div class="mt-2">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
+                    {{ 'psychologists.findYourPsychologist' | transloco }}
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-6">
+        <ng-container *ngFor="let psychologist of psychologistsData">
+            <div class="flex flex-col items-center bg-card shadow-lg rounded-2xl overflow-hidden">
+                <!-- Avatar -->
+                <div class="w-36 h-36 mt-6 rounded-full overflow-hidden flex items-center justify-center bg-gray-100">
+                    <img
+                            *ngIf="psychologist.avatar; else noPhoto"
+                            class="w-full h-full object-cover"
+                            [src]="psychologist.avatar">
+                    <ng-template #noPhoto>
+                        <mat-icon class="icon-size-20 text-hint">person</mat-icon>
+                    </ng-template>
+                </div>
+                <!-- Info -->
+                <div class="text-center p-6">
+                    <div class="text-xl font-semibold">{{ psychologist['name_' + activeLang] }}</div>
+                    <div class="text-gray-500">{{ psychologist['description_' + activeLang] }}</div>
+                    <div class="mt-2 text-sm text-gray-400">
+                        <strong>{{ 'psychologists.experience' | transloco }}:</strong> {{ psychologist['experience_' + activeLang] }}
+                    </div>
+                    <div class="text-sm text-gray-400 mt-2">
+                        <strong>{{ 'psychologists.specialization' | transloco }}:</strong> {{ psychologist['specialization_' + activeLang] }}
+                    </div>
+                    <div class="mt-2 text-sm text-gray-400">
+                        <strong>{{ 'psychologists.schedule' | transloco }}:</strong> {{ psychologist['schedule_' + activeLang] }}
+                    </div>
+                </div>
+                <!-- Contact -->
+                <div class="flex w-full border-t divide-x">
+                    <a class="flex flex-auto items-center justify-center py-4 hover:bg-hover" [href]="'mailto:' + psychologist.email">
+                        <mat-icon class="icon-size-5 text-hint">mail</mat-icon>
+                        <span class="ml-2">{{ 'psychologists.email' | transloco }}</span>
+                    </a>
+                    <a class="flex flex-auto items-center justify-center py-4 hover:bg-hover" [href]="'tel:' + psychologist.phone">
+                        <mat-icon class="icon-size-5 text-hint">phone</mat-icon>
+                        <span class="ml-2">{{ 'psychologists.phone' | transloco }}</span>
+                    </a>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

@@ -952,38 +952,39 @@ export const defaultNavigation: FuseNavigationItem[] = [
 ];
 export const horizontalNavigation: FuseNavigationItem[] = [
     {
-        id      : 'main',
+        id      : 'navigation.main',
         title   : 'Главная',
         type    : 'basic',
         icon    : 'heroicons_outline:home',
         link    : '/main'
     },
     {
-        id      : 'tests',
+        id      : 'navigation.tests',
         title   : 'Методики',
         type    : 'basic',
         icon    : 'heroicons_outline:qrcode',
         link    : '/tests'
     },
     {
-        id      : 'professions',
+        id      : 'navigation.professions',
         title   : 'Профессии',
         type    : 'basic',
         icon    : 'heroicons_outline:document-duplicate',
         link    : '/professions'
     },
     {
-        id      : 'psychologists',
+        id      : 'navigation.psychologists',
         title   : 'Психологи',
         type    : 'basic',
         icon    : 'heroicons_outline:users',
         link    : '/psychologists'
     },
     {
-        id      : 'analysis',
+        id      : 'navigation.analysis',
         title   : 'Анализ',
         type    : 'basic',
         icon    : 'heroicons_outline:chart-bar',
         link    : '/analysis'
     }
 ];
+
